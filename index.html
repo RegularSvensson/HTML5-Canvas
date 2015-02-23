@@ -11,11 +11,27 @@
 
     </head>
     <body>
-    	<canvas id = "c" width= "500" height = "500"> </canvas>
+    	<canvas id = "c" width= "400" height = "400"> </canvas>
 	    <script>
 	    var c = document.querySelector("#c");
 	    var ctx = c.getContext("2d");
+	    /* Supposedly make every 10th pixel green.
+	    var data = ctx.getImage(0,0,400,400);
 
+	    function paintGreen(imageData) {
+	    	var numPixels = imageData.data.length / 4;
+	    	for (var i = 0; i < numPixels; i++) {
+	    		if (i % 10 === 0 ) {
+	    			imageData.data[i * 4 + 1] = 255;
+	    			imageData.data[i * 4 + 3] = 255;
+	    		}
+	    	}
+	    	ctx.putImageData(imageData, 0,0);
+	    }
+
+	    paintGreen(data);
+		*/
+	    //draw meme-text
 	    ctx.font = '36pt Impact';
 	    ctx.textAlign = 'center';
 
@@ -25,6 +41,8 @@
 	    ctx.strokeStyle = 'black';
 	    ctx.lineWidth = 3;
 	    ctx.strokeText('CANVAS MEMES!', c.width / 2, 40);
+		
+
 
 	    /* draw box
 	    ctx.strokeStyle = '#33CC33';
